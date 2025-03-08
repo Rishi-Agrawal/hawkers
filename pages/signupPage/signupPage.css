@@ -1,0 +1,99 @@
+
+.signup-page-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #FFCB8D; Changed background color to yellow */
+  }
+
+  .signup-heading-signup {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    color:black; /* Adjust the color as needed */
+  }
+  
+  .left-container-signup {
+    
+    /* flex: 1; */
+    padding: 20px;
+    margin-left: 20px;
+    /* background-color: #fff; */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-signup {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .form-signup label {
+    font-weight: 800;
+  }
+  
+  .form-signup input[type="text"],
+  .form-signup input[type="email"],
+  .form-signup input[type="password"],
+  .form-signup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .form-signup input[type="time"] {
+    width: calc(50% - 5px);
+  }
+  
+  .form-signup textarea {
+    
+    height: 80px;
+  }
+  
+  .btnsignup {
+    font-weight: 500;
+    border-radius: 30px;
+    width: 100%;
+    padding: 10px;
+    /* background-color: #007bff; */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btnsignup:hover {
+    background-color: orange;
+  }
+  
+  .right-container-signup {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .square-container-signup {
+    margin-top: 0;
+    width: 500px;
+    height: 500;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .square-container-signup::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 6px;
+  }
+  
