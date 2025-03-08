@@ -1,13 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const port = 8000;
+const hawkerRoute = require('./routes/hawkerRoutes');
+const itemsRoute = require('./routes/itemsRoute');
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+const connectToMonogoDB = require('./connection');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+connectToMonogoDB();
+
+// Middleware to parse JSON bodies
+app.use(express.json());
+app.use(cors());
+// Middleware to parse URL-encoded bodies
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/hawker",hawkerRoute);
+app.use("/items",itemsRoute);
+
+app.listen(port,() => console.log(`server listening on port ${port}`));
